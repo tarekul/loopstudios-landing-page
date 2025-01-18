@@ -8,28 +8,47 @@ li {
 header {
   background-image: url("./images/desktop/image-hero.jpg");
   background-size: cover;
-  background-position: center;
-  height: 50vh;
+  background-position: top;
+  height: 45vh;
   color: variables.$white;
-  padding: 1rem;
+  padding: 3rem 7rem;
   display: flex;
   flex-direction: column;
+  gap: 4rem;
 }
 
 .logo {
   display: flex;
-  justify-content: space-around;
   align-items: flex-start;
 }
 
 nav {
+  margin-left: auto;
   ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
     li {
-      padding: 1rem;
+      margin: 0 1rem;
       font-size: variables.$font-size;
+      cursor: pointer;
+      position: relative;
+    }
+
+    li::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: variables.$white;
+      border-radius: 2px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    li:hover::after {
+      width: 40%;
     }
   }
 }
@@ -37,11 +56,11 @@ nav {
 .title {
   border: 1px solid variables.$white;
   padding: 1rem;
-  width: 20%;
+  width: 30%;
 
   h1 {
     font-family: variables.$secondary-font;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 3vw, 3rem);
     text-transform: uppercase;
     font-weight: 300;
   }
