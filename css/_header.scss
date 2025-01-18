@@ -1,5 +1,10 @@
 @use "./variables";
 
+li {
+  font-size: variables.$font-size;
+  font-family: variables.$primary-font;
+}
+
 header {
   background-image: url("./images/desktop/image-hero.jpg");
   background-size: cover;
@@ -7,6 +12,8 @@ header {
   height: 50vh;
   color: variables.$white;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
@@ -24,5 +31,18 @@ nav {
       padding: 1rem;
       font-size: variables.$font-size;
     }
+  }
+}
+
+.title {
+  border: 1px solid variables.$white;
+  padding: 1rem;
+  width: 20%;
+
+  h1 {
+    font-family: variables.$secondary-font;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 300;
   }
 }
