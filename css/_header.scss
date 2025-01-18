@@ -1,0 +1,28 @@
+@use "./variables";
+
+header {
+  background-image: url("./images/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  color: variables.$white;
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+nav {
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    li {
+      padding: 1rem;
+      font-size: variables.$font-size;
+    }
+  }
+}

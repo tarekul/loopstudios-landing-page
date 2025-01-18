@@ -1,0 +1,11 @@
+@use "./header";
+@use "./variables";
+// @use "./main";
+// @use "./footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: variables.$font-size;
+}

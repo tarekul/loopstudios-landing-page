@@ -1,0 +1,33 @@
+header {
+  background-image: url("./images/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  color: hsl(0, 0%, 100%);
+  padding: 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+nav ul li {
+  padding: 1rem;
+  font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+/*# sourceMappingURL=styles.css.map */
