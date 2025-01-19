@@ -1,8 +1,57 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 footer {
   background-color: $black;
   color: $white;
   padding: 2rem 10rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+  .footer-section-one,
+  .footer-section-two {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .footer-section-two > div {
+    align-self: flex-end;
+    display: flex;
+    gap: 1rem;
+
+    .image-wrapper {
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $white;
+        border-radius: 2px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-section-two > p {
+    color: $very-dark-gray;
+  }
+
+  .footer-section-one > img {
+    width: 9rem;
+  }
+
+  @include navStyles();
 }

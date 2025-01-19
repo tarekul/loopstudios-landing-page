@@ -222,6 +222,73 @@ footer {
   color: hsl(0, 0%, 100%);
   padding: 2rem 10rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-section-one,
+footer .footer-section-two {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  position: relative;
+}
+footer .footer-section-two > div {
+  align-self: flex-end;
+  display: flex;
+  gap: 1rem;
+}
+footer .footer-section-two > div .image-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+footer .footer-section-two > div .image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+footer .footer-section-two > div .image-wrapper:hover::after {
+  width: 100%;
+}
+footer .footer-section-two > p {
+  color: hsl(0, 0%, 41%);
+}
+footer .footer-section-one > img {
+  width: 9rem;
+}
+footer nav {
+  margin-left: auto;
+}
+footer nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+footer nav ul li {
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+}
+footer nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+footer nav ul li:hover::after {
+  width: 40%;
 }
 
 * {

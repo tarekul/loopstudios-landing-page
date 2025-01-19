@@ -27,3 +27,36 @@
     transition: transform 0.1s;
   }
 }
+
+@mixin navStyles {
+  nav {
+    margin-left: auto;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      li {
+        font-size: variables.$font-size;
+        cursor: pointer;
+        position: relative;
+      }
+
+      li::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: variables.$white;
+        border-radius: 2px;
+        transition: width 0.3s ease-in-out;
+      }
+
+      li:hover::after {
+        width: 40%;
+      }
+    }
+  }
+}
