@@ -1,0 +1,29 @@
+@use "variables";
+
+@mixin headingStyles {
+  font-size: clamp(0.2rem, 2vw + 0.2rem, 3rem);
+  font-family: variables.$secondary-font;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+@mixin buttonStyles {
+  padding: 0.5rem 3rem;
+  border: 1px solid variables.$black;
+  border-radius: 0.5rem;
+  background-color: variables.$white;
+  font-family: variables.$primary-font;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: variables.$black;
+    color: variables.$white;
+    transition: all 0.3s ease;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+  }
+}

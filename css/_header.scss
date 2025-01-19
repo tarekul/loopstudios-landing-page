@@ -11,10 +11,9 @@ header {
   background-position: top;
   height: 45vh;
   color: variables.$white;
-  padding: 3rem 7rem;
+  padding: 3rem 10rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
 }
 
 .logo {
@@ -27,9 +26,8 @@ nav {
   ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
     li {
-      margin: 0 1rem;
       font-size: variables.$font-size;
       cursor: pointer;
       position: relative;
@@ -40,6 +38,7 @@ nav {
       position: absolute;
       bottom: -8px;
       left: 50%;
+      transform: translateX(-50%);
       width: 0;
       height: 2px;
       background-color: variables.$white;
@@ -56,12 +55,16 @@ nav {
 .title {
   border: 1px solid variables.$white;
   padding: 1rem;
-  width: 30%;
+  width: fit-content;
+  margin-top: auto;
 
   h1 {
-    font-family: variables.$secondary-font;
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    text-transform: uppercase;
-    font-weight: 300;
+    span {
+      display: block;
+      font-size: clamp(1.5rem, 3vw, 3rem);
+      font-family: variables.$secondary-font;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
   }
 }
