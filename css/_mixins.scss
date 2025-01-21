@@ -60,3 +60,19 @@
     }
   }
 }
+
+@mixin breakpoint($size) {
+  @if $size == mobile {
+    @media (max-width: 48em) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: 48em) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 64em) {
+      @content;
+    }
+  }
+}
