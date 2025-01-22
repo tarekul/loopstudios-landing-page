@@ -18,6 +18,10 @@ header {
 
   @include breakpoint(mobile) {
     height: 100vh;
+
+    nav {
+      display: none;
+    }
   }
 }
 
@@ -36,12 +40,6 @@ header {
 
 .fa-solid.fa-bars {
   margin-left: auto;
-}
-
-@include breakpoint(mobile) {
-  nav {
-    display: none;
-  }
 }
 
 .title {

@@ -17,6 +17,9 @@ header {
   header {
     height: 100vh;
   }
+  header nav {
+    display: none;
+  }
 }
 
 .logo {
@@ -28,16 +31,35 @@ header {
   nav {
     margin-left: auto;
   }
+}
+@media (min-width: 64em) and (max-width: 48em) {
+  nav {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+@media (min-width: 64em) {
   nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
   }
+}
+@media (min-width: 64em) and (max-width: 48em) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+@media (min-width: 64em) {
   nav ul li {
     font-size: 15px;
     cursor: pointer;
     position: relative;
   }
+}
+@media (min-width: 64em) and (min-width: 64em) {
   nav ul li::after {
     content: "";
     position: absolute;
@@ -53,6 +75,8 @@ header {
   nav ul li:hover::after {
     width: 40%;
   }
+}
+@media (min-width: 64em) {
   .fa-solid.fa-bars {
     display: none;
   }
@@ -61,11 +85,6 @@ header {
   margin-left: auto;
 }
 
-@media (max-width: 48em) {
-  nav {
-    display: none;
-  }
-}
 .title {
   border: 2px solid hsl(0, 0%, 100%);
   padding: 1rem;
@@ -424,30 +443,45 @@ footer .footer-section-one > img {
 footer nav {
   margin-left: auto;
 }
+@media (max-width: 48em) {
+  footer nav {
+    margin-left: 0;
+    align-self: center;
+  }
+}
 footer nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+}
+@media (max-width: 48em) {
+  footer nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 footer nav ul li {
   font-size: 15px;
   cursor: pointer;
   position: relative;
 }
-footer nav ul li::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 2px;
-  transition: width 0.3s ease-in-out;
-}
-footer nav ul li:hover::after {
-  width: 40%;
+@media (min-width: 64em) {
+  footer nav ul li::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+  }
+  footer nav ul li:hover::after {
+    width: 40%;
+  }
 }
 
 * {
