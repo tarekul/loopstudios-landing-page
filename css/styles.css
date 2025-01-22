@@ -21,7 +21,7 @@ header {
 
 .logo {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @media (min-width: 64em) {
@@ -53,7 +53,14 @@ header {
   nav ul li:hover::after {
     width: 40%;
   }
+  .fa-solid.fa-bars {
+    display: none;
+  }
 }
+.fa-solid.fa-bars {
+  margin-left: auto;
+}
+
 @media (max-width: 48em) {
   nav {
     display: none;

@@ -23,11 +23,19 @@ header {
 
 .logo {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @include breakpoint(desktop) {
   @include navStyles();
+
+  .fa-solid.fa-bars {
+    display: none;
+  }
+}
+
+.fa-solid.fa-bars {
+  margin-left: auto;
 }
 
 @include breakpoint(mobile) {
