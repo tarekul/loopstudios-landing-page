@@ -54,18 +54,41 @@ header {
     width: 40%;
   }
 }
+@media (max-width: 48em) {
+  nav {
+    display: none;
+  }
+}
 .title {
-  border: 1px solid hsl(0, 0%, 100%);
+  border: 2px solid hsl(0, 0%, 100%);
   padding: 1rem;
   width: fit-content;
   margin-top: auto;
 }
+@media (max-width: 48em) {
+  .title {
+    margin-top: 100px;
+    width: 100%;
+  }
+}
 .title h1 span {
   display: block;
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: 2.6rem;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
+}
+@media (min-width: 64em) {
+  .title h1 span:nth-child(3),
+  .title h1 span:nth-child(4) {
+    display: inline;
+  }
+}
+@media (max-width: 48em) {
+  .title h1 span:nth-child(3),
+  .title h1 span:nth-child(4) {
+    display: block;
+  }
 }
 
 main {
@@ -79,8 +102,20 @@ main {
 .about {
   position: relative;
 }
+@media (max-width: 48em) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .about img {
   width: 60%;
+}
+@media (max-width: 48em) {
+  .about img {
+    width: 100%;
+  }
 }
 .about .about-text {
   position: absolute;
@@ -94,14 +129,21 @@ main {
   gap: 1rem;
   width: 45%;
 }
+@media (max-width: 48em) {
+  .about .about-text {
+    position: static;
+    width: 100%;
+    transform: translateX(0);
+  }
+}
 .about h2 {
-  font-size: clamp(0.2rem, 2vw + 0.2rem, 3rem);
+  font-size: clamp(1.5rem, 2vw + 0.2rem, 3rem);
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
 .about p {
-  font-size: clamp(0.1rem, 1vw + 0.2rem, 1rem);
+  font-size: clamp(0.9rem, 1vw + 0.2rem, 1rem);
   font-family: "Josefin Sans", sans-serif;
   color: hsl(0, 0%, 55%);
   line-height: 1.5;
@@ -111,36 +153,48 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: 7rem;
+  margin-top: 4rem;
 }
 .projects .projects-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 48em) {
+  .projects .projects-title {
+    justify-content: center;
+  }
+}
 .projects .projects-title h2 {
-  font-size: clamp(0.2rem, 2vw + 0.2rem, 3rem);
+  font-size: clamp(1.5rem, 2vw + 0.2rem, 3rem);
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   text-transform: uppercase;
 }
-.projects .projects-title button {
-  padding: 0.5rem 3rem;
-  border: 1px solid hsl(0, 0%, 0%);
-  border-radius: 0.5rem;
-  background-color: hsl(0, 0%, 100%);
-  font-family: "Alata", sans-serif;
-  text-transform: uppercase;
-  cursor: pointer;
+@media (min-width: 64em) {
+  .projects .projects-title .desktop-btn {
+    padding: 0.5rem 3rem;
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0%, 100%);
+    font-family: "Alata", sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .projects .projects-title .desktop-btn:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease;
+  }
+  .projects .projects-title .desktop-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+  }
 }
-.projects .projects-title button:hover {
-  background-color: hsl(0, 0%, 0%);
-  color: hsl(0, 0%, 100%);
-  transition: all 0.3s ease;
-}
-.projects .projects-title button:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
+@media (max-width: 48em) {
+  .projects .projects-title .mobile-btn {
+    display: none;
+  }
 }
 .projects .projects-container {
   display: grid;
@@ -148,6 +202,13 @@ main {
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
   height: 100vh;
+}
+@media (max-width: 48em) {
+  .projects .projects-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    height: auto;
+  }
 }
 .projects .projects-container > .project {
   color: hsl(0, 0%, 100%);
@@ -187,40 +248,108 @@ main {
   background-image: url("../images/desktop/image-deep-earth.jpg");
   background-size: cover;
 }
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(1) {
+    background-image: url("../images/mobile/image-deep-earth.jpg");
+  }
+}
 .projects .projects-container > .project:nth-child(2) {
   grid-column: auto;
   background-image: url("../images/desktop/image-night-arcade.jpg");
   background-size: cover;
+}
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(2) {
+    background-image: url("../images/mobile/image-night-arcade.jpg");
+  }
 }
 .projects .projects-container > .project:nth-child(3) {
   grid-column: auto;
   background-image: url("../images/desktop/image-soccer-team.jpg");
   background-size: cover;
 }
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(3) {
+    background-image: url("../images/mobile/image-soccer-team.jpg");
+  }
+}
 .projects .projects-container > .project:nth-child(4) {
   grid-column: auto;
   background-image: url("../images/desktop/image-grid.jpg");
   background-size: cover;
+}
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(4) {
+    background-image: url("../images/mobile/image-grid.jpg");
+  }
 }
 .projects .projects-container > .project:nth-child(5) {
   grid-column: auto;
   background-image: url("../images/desktop/image-from-above.jpg");
   background-size: cover;
 }
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(5) {
+    background-image: url("../images/mobile/image-from-above.jpg");
+  }
+}
 .projects .projects-container > .project:nth-child(6) {
   grid-column: auto;
   background-image: url("../images/desktop/image-pocket-borealis.jpg");
   background-size: cover;
+}
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(6) {
+    background-image: url("../images/mobile/image-pocket-borealis.jpg");
+  }
 }
 .projects .projects-container > .project:nth-child(7) {
   grid-column: auto;
   background-image: url("../images/desktop/image-curiosity.jpg");
   background-size: cover;
 }
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(7) {
+    background-image: url("../images/mobile/image-curiosity.jpg");
+  }
+}
 .projects .projects-container > .project:nth-child(8) {
   grid-column: auto;
   background-image: url("../images/desktop/image-fisheye.jpg");
   background-size: cover;
+}
+@media (max-width: 48em) {
+  .projects .projects-container > .project:nth-child(8) {
+    background-image: url("../images/mobile/image-fisheye.jpg");
+  }
+}
+@media (min-width: 64em) {
+  .projects .mobile-btn {
+    display: none;
+  }
+}
+@media (max-width: 48em) {
+  .projects .mobile-btn {
+    padding: 0.5rem 3rem;
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0%, 100%);
+    font-family: "Alata", sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .projects .mobile-btn:hover {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    transition: all 0.3s ease;
+  }
+  .projects .mobile-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+  }
+  .projects .desktop-btn {
+    display: none;
+  }
 }
 
 footer {
@@ -231,6 +360,12 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 48em) {
+  footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 footer .footer-section-one,
 footer .footer-section-two {
   display: flex;
@@ -239,10 +374,21 @@ footer .footer-section-two {
   align-items: flex-start;
   position: relative;
 }
+@media (max-width: 48em) {
+  footer .footer-section-one,
+  footer .footer-section-two {
+    align-self: center;
+  }
+}
 footer .footer-section-two > div {
   align-self: flex-end;
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 48em) {
+  footer .footer-section-two > div {
+    align-self: center;
+  }
 }
 footer .footer-section-two > div .image-wrapper {
   position: relative;

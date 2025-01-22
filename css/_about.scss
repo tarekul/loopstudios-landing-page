@@ -12,8 +12,18 @@ main {
 .about {
   position: relative;
 
+  @include mixins.breakpoint(mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   img {
     width: 60%;
+
+    @include mixins.breakpoint(mobile) {
+      width: 100%;
+    }
   }
 
   .about-text {
@@ -27,6 +37,12 @@ main {
     flex-direction: column;
     gap: 1rem;
     width: 45%;
+
+    @include mixins.breakpoint(mobile) {
+      position: static;
+      width: 100%;
+      transform: translateX(0);
+    }
   }
 
   h2 {
@@ -34,7 +50,7 @@ main {
   }
 
   p {
-    font-size: clamp(0.1rem, 1vw + 0.2rem, 1rem);
+    font-size: clamp(0.9rem, 1vw + 0.2rem, 1rem);
     font-family: variables.$secondary-font;
     color: variables.$dark-gray;
     line-height: 1.5;

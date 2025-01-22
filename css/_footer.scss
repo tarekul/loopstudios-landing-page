@@ -9,6 +9,11 @@ footer {
   display: flex;
   justify-content: space-between;
 
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .footer-section-one,
   .footer-section-two {
     display: flex;
@@ -16,12 +21,20 @@ footer {
     gap: 1.5rem;
     align-items: flex-start;
     position: relative;
+
+    @include breakpoint(mobile) {
+      align-self: center;
+    }
   }
 
   .footer-section-two > div {
     align-self: flex-end;
     display: flex;
     gap: 1rem;
+
+    @include breakpoint(mobile) {
+      align-self: center;
+    }
 
     .image-wrapper {
       position: relative;

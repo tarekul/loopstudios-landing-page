@@ -1,7 +1,7 @@
 @use "variables";
 
 @mixin headingStyles {
-  font-size: clamp(0.2rem, 2vw + 0.2rem, 3rem);
+  font-size: clamp(1.5rem, 2vw + 0.2rem, 3rem);
   font-family: variables.$secondary-font;
   font-weight: 300;
   text-transform: uppercase;
