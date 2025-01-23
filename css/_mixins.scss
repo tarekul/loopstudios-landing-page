@@ -72,6 +72,25 @@
   }
 }
 
+@mixin menuNavStyles {
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      li {
+        font-size: 1.5rem;
+        font-family: variables.$primary-font;
+        cursor: pointer;
+        color: variables.$dark-gray;
+      }
+    }
+  }
+}
+
 @mixin breakpoint($size) {
   @if $size == mobile {
     @media (max-width: 48em) {
