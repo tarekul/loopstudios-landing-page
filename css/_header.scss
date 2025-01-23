@@ -38,6 +38,14 @@ header {
   }
 }
 
+@include breakpoint(tablet) {
+  @include navStyles();
+
+  .fa-solid.fa-bars {
+    display: none;
+  }
+}
+
 .fa-solid.fa-bars {
   margin-left: auto;
   align-self: center;

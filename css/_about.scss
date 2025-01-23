@@ -38,6 +38,11 @@ main {
     gap: 1rem;
     width: 45%;
 
+    @include mixins.breakpoint(tablet) {
+      width: 60%;
+      transform: translateX(0);
+    }
+
     @include mixins.breakpoint(mobile) {
       position: static;
       width: 100%;

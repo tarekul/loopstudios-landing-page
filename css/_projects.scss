@@ -26,6 +26,12 @@
       }
     }
 
+    @include breakpoint(tablet) {
+      .desktop-btn {
+        @include buttonStyles;
+      }
+    }
+
     @include breakpoint(mobile) {
       .mobile-btn {
         display: none;
@@ -37,8 +43,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     height: 100vh;
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 1fr);
+      height: auto;
+    }
 
     @include breakpoint(mobile) {
       grid-template-columns: 1fr;
@@ -173,6 +185,12 @@
   }
 
   @include breakpoint(desktop) {
+    .mobile-btn {
+      display: none;
+    }
+  }
+
+  @include breakpoint(tablet) {
     .mobile-btn {
       display: none;
     }
