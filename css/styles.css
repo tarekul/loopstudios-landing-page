@@ -242,8 +242,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
+}
+@media (max-width: 48em) {
+  .projects .projects-container > .project {
+    height: 8rem;
+  }
 }
 .projects .projects-container > .project::after {
   content: "";
@@ -252,12 +257,13 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: currentColor;
-  opacity: 0;
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0.1;
   transition: all 0.3s ease;
   z-index: 0;
 }
 .projects .projects-container > .project:hover::after {
+  background-color: currentColor;
   opacity: 0.7;
 }
 .projects .projects-container > .project:hover p {
